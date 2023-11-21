@@ -123,7 +123,6 @@ static int generate_password(struct dynsec__data *data, cJSON *j_client, char **
 	char *pwenv;
 
 	memset(&pw, 0, sizeof(struct mosquitto_pw));
-	pw.hashtype = pw_sha512_pbkdf2;
 
 	if(data->init_mode == dpwim_file){
 		if(get_password_from_init_file(data, password)){
@@ -157,9 +156,6 @@ static int generate_password(struct dynsec__data *data, cJSON *j_client, char **
 		}
 		(*password)[20] = '\0';
 	}
-
-	pw.hashtype = pw_sha512_pbkdf2;
-	pw.params.sha512_pbkdf2.iterations = PW_DEFAULT_ITERATIONS + 1;
 
 	if(pw__create(&pw, *password) != MOSQ_ERR_SUCCESS){
 		free(*password);
