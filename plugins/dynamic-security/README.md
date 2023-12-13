@@ -379,7 +379,7 @@ Command:
 	"commands":[
 		{
 			"command": "getGroup",
-			"groupname: "group to get"
+			"groupname": "group to get"
 		}
 	]
 }
