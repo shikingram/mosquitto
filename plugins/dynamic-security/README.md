@@ -360,7 +360,7 @@ Command:
 	"commands":[
 		{
 			"command": "deleteGroup",
-			"groupname: "group to delete"
+			"groupname": "group to delete"
 		}
 	]
 }
